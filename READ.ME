@@ -1,0 +1,18 @@
+MQTTSolar
+This project allow to control Electric Water Boiler from ESP32 wifi Heltec with OLED.
+This project allow to control the exact ammount of watts to apply to the boiler.
+This code is configurated for a 2KW resistor.
+The ESP 32 shows temperature sensor in display with a temperature sensor:
+You have to configure next variables:
+
+const char* ssid     = "wifissid";          // your network SSID (name of wifi network)
+const char* password = "wifipassword";     // your network password
+const char* mqtt_server = "192.168.1.16"; // your mqtt server ip
+const int mqtt_port = 1883;                // your mqtt server port
+const char* mqtt_topic_1 = "/termo/on";           // mqqt topic to on and off boiler
+const char* mqtt_topic_2 = "/termo/potencia";    //mqtt topic to set power output (0 min - 10 max)
+const char* mqtt_topic_3 = "/energia/termo";           // mqqt topic of boiler consumption. It's necessary to pass level 1. If no power is sennt the software only applies 1 power level
+const char* mqtt_topic_4 = "/termo/temperatura"; // mqqt topic to report water temperature
+
+
+
